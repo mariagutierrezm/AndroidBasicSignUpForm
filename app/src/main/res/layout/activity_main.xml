@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:id="@+id/parent">
 
     <Button
         android:id="@+id/btn"
@@ -47,7 +48,7 @@
         android:hint="Name"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/warnTextView" />
 
     <EditText
         android:id="@+id/txtEmail"
@@ -57,7 +58,7 @@
         android:hint="Email"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/warnTextView2" />
 
     <EditText
         android:id="@+id/txtPassword"
@@ -68,7 +69,7 @@
         android:hint="Password"
         android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/warnTextView3" />
 
     <EditText
         android:id="@+id/txtPassword2"
@@ -79,7 +80,7 @@
         android:hint="ConfirmPassword"
         android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/warnTextView4" />
 
     <ImageView
         android:id="@+id/img"
@@ -133,7 +134,7 @@
         app:layout_constraintTop_toTopOf="@+id/countries" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/warnTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -144,7 +145,7 @@
         app:layout_constraintTop_toBottomOf="@+id/guideline3" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/warnTextView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -155,7 +156,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtPassword" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/warnTextView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -165,7 +166,7 @@
         tools:layout_editor_absoluteX="46dp" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/warnTextView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
