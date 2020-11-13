@@ -103,6 +103,8 @@ public class MainActivity extends AppCompatActivity {
         String snackText = "Name: " + name + "\n" + "Email: " + email + "\n" +
                 "Country: " + country + "\n" + "Gender: " + gender;
 
+        Log.d(TAG, "Snackbar Text: " + snackText);
+        
         //first pass the layout then the text, then the constant
         Snackbar.make(parent, snackText, Snackbar.LENGTH_INDEFINITE)
                 .setAction("Dismiss", new View.OnClickListener() {
