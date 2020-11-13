@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">FirstForm</string>
+    <array name="countries">
+        <item>Scotland</item>
+        <item>Colombia</item>
+        <item>Germany</item>
+        <item>Italy</item>
+        <item>Belgium</item>
+        <item>Prague</item>
+        <item>Israel</item>
+    </array>
+</resources>
