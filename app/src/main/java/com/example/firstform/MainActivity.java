@@ -79,12 +79,40 @@ public class MainActivity extends AppCompatActivity {
         warnTxtView3.setVisibility(View.GONE);
         warnTxtView4.setVisibility(View.GONE);
 
+        //change the text of the snackbar, first get the values of name, email, country and gender
+        String name = editTxtName.getText().toString();
+        String email = editTxtEmail.getText().toString();
+        String country = spinnerCountries.getSelectedItem().toString();
+        String gender = "";
+        //for getting the users gender we create a switch statement
+        switch (radioGroupGender.getCheckedRadioButtonId()) {
+            case R.id.rbFemale:
+                gender = "Female";
+                break;
+            case R.id.rbMale:
+                gender = "Male";
+            case R.id.rbOther:
+                gender = "Not Specified";
+                break;
+            default: //unlikely to be used but written in case something goes wrong is for security purposes
+                gender = "Unknown";
+                break;
+        }
+
+        //change text
+        String snackText = "Name: " + name + "\n" + "Email: " + email + "\n" +
+                "Country: " + country + "\n" + "Gender: " + gender;
+
         //first pass the layout then the text, then the constant
-        Snackbar.make(parent, "User Registered", Snackbar.LENGTH_INDEFINITE)
+        Snackbar.make(parent, snackText, Snackbar.LENGTH_INDEFINITE)
                 .setAction("Dismiss", new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        //TODO
+                        //clear the edit text inputs
+                        editTxtName.setText("");
+                        editTxtEmail.setText("");
+                        editTxtPassword.setText("");
+                        editTxtPassword2.setText("");
                     }
                 }).show();
     }
@@ -113,6 +141,13 @@ public class MainActivity extends AppCompatActivity {
         if(editTxtPassword2.getText().toString().equals("")) {
             warnTxtView4.setVisibility(View.VISIBLE);
             warnTxtView4.setText("Confirm your password");
+            return false;
+        }
+
+        //validate passwords match
+        if(!editTxtPassword.getText().toString().equals(editTxtPassword2.getText().toString())) {
+            warnTxtView4.setVisibility(View.VISIBLE);
+            warnTxtView4.setText("Passwords do not match");
             return false;
         }
 
